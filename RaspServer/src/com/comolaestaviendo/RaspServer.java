@@ -8,11 +8,7 @@ public class RaspServer {
 
         BluetoothServer bluetoothServer = new BluetoothServer();
 
-        try {
-            bluetoothServer.run();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        bluetoothServer.run();
 
     }
 }
