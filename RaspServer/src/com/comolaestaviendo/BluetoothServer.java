@@ -1,23 +1,22 @@
 package com.comolaestaviendo;
 import javax.bluetooth.*;
-import java.io.IOException;
 
-public class BluetoothServer {
+class BluetoothServer {
 
-    public BluetoothServer() {
+    private LocalDevice localDevice;
 
+    BluetoothServer() {
+
+        try {
+            localDevice = LocalDevice.getLocalDevice();
+        } catch (BluetoothStateException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void run() throws IOException {
+    void run() {
 
-        LocalDevice device = LocalDevice.getLocalDevice();
-
-        RemoteDevice[] remotedevice = device.getDiscoveryAgent().retrieveDevices(DiscoveryAgent.PREKNOWN);
-
-        for(RemoteDevice d : remotedevice)
-        {
-            System.out.println("Device Name : "+d.getFriendlyName(false));
-            System.out.println("Bluetooth Address : "+d.getBluetoothAddress()+"\n");
-        }
+        System.out.println("Local device name: " + localDevice.getFriendlyName());
+        System.out.println("Local device address: " + localDevice.getBluetoothAddress());
     }
 }
