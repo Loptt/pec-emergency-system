@@ -2,12 +2,12 @@ package com.comolaestaviendo;
 import java.net.*;
 
 
-public class Server {
+public class InternetServer {
 
     private ServerSocket server;
     private Socket socket;
 
-    public Server() {
+    public InternetServer() {
 
     }
 
