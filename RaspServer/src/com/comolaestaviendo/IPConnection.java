@@ -2,12 +2,12 @@ package com.comolaestaviendo;
 import java.net.*;
 
 
-public class InternetServer extends Thread {
+public class IPConnection extends Thread {
 
     private ServerSocket server;
     private Socket socket;
 
-    public InternetServer() {
+    public IPConnection() {
 
     }
 

@@ -6,7 +6,7 @@ import javax.microedition.io.StreamConnection;
 import javax.microedition.io.StreamConnectionNotifier;
 import java.io.*;
 
-public class BluetoothServer extends Thread {
+public class BluetoothServer {
 
     private LocalDevice localDevice;
 
@@ -40,20 +40,6 @@ public class BluetoothServer extends Thread {
         } catch (BluetoothStateException e) {
             e.printStackTrace();
         }
-    }
-
-    //Thread method
-    public void run() {
-        try {
-            getInput();
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Device disconnected");
-        }
-    }
-
-    public boolean initialize() {
-        return connect();
     }
 
     private void getInput() throws IOException {
