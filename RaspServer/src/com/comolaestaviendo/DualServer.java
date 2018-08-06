@@ -9,11 +9,17 @@ public class DualServer {
 
     public DualServer() {
         bluetoothServer = new BluetoothServer();
-        internetServer = new InternetServer();
+        internetServer  = new InternetServer();
     }
 
     public void start() {
         btDeviceConnected = bluetoothServer.initialize();
+
+        if (!btDeviceConnected) {
+            System.out.println("WARNING: Emergency bracelet not connected");
+        }
+
+        //TODO: Initialize internet server on new thread
 
     }
 
