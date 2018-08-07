@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Emergency System</string>
+    <string name="Welcome_Text">Welcome!</string>
+    <string name="Logo_Text">Logo</string>
+    <string name="email_hint">Email...</string>
+    <string name="password_hint">Password...</string>
+    <string name="loginb_text">Log In</string>
+    <string name="signupb_text">Create Account</string>
 </resources>
