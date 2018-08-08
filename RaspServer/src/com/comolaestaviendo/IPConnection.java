@@ -36,8 +36,20 @@ public class IPConnection extends Thread {
         closeConnection();
     }
 
-    public void sendOutput() {
-        
+    public void sendOutput(String code) {
+        output.write(code);
+    }
+
+    public String getInputString() {
+        return inputString;
+    }
+
+    public void setInputString(String newString) {
+        inputString = newString;
+    }
+
+    public boolean getIsConnectionActive() {
+        return isConnectionActive;
     }
 
     private void closeConnection() {
@@ -52,10 +64,6 @@ public class IPConnection extends Thread {
 
         isConnectionActive = false;
 
-    }
-
-    public boolean getIsConnectionActive() {
-        return isConnectionActive;
     }
 
 }

@@ -6,6 +6,6 @@ public class RaspServer {
 
     public static void main(String args[]) throws IOException {
         MainServer server = new MainServer();
-        server.start();
+        server.initialize();
     }
 }

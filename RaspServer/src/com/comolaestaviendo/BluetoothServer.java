@@ -23,6 +23,8 @@ public class BluetoothServer {
 
     private String incomingMessage;
 
+    private boolean btDeviceConnected = false;
+
     public BluetoothServer() {
 
         serviceUUID = new UUID(serviceStringUUID, false);
@@ -54,7 +56,7 @@ public class BluetoothServer {
         outputStream.writeChars(message);
     }
 
-    private boolean connect() {
+    private void connect() {
         StreamConnection connection;
 
         try {
@@ -65,16 +67,19 @@ public class BluetoothServer {
             inputStream = connection.openDataInputStream();
             outputStream = connection.openDataOutputStream();
 
-            return true;
+            btDeviceConnected = true;
 
         } catch (IOException e) {
             e.printStackTrace();
-            return false;
         }
 
     }
 
     public String getIncomingMessage() {
         return incomingMessage;
+    }
+
+    public boolean getBtDeviceConnected() {
+        return btDeviceConnected;
     }
 }
