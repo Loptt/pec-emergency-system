@@ -89,10 +89,10 @@ public class MainServer extends Thread {
                 break;
             case "GET-STATUS":
                 if (bluetoothServer.getBtDeviceConnected()) {
-                    connection.sendOutput("connected");
+                    connection.sendOutput("STATUS-CONNECTED");
                 }
                 else {
-                    connection.sendOutput("disconnected");
+                    connection.sendOutput("STATUS-DISCONNECTED");
                 }
                 break;
         }
