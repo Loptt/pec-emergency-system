@@ -3,6 +3,7 @@ package com.comolaestaviendo;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.security.PrivilegedAction;
 import java.util.ArrayList;
 
 public class MainServer extends Thread {
@@ -33,8 +34,7 @@ public class MainServer extends Thread {
         //Main loop to handle connections and attend events
         while (true) {
             handleConnections();
-
-
+            handleBtDevice();
         }
 
     }
@@ -84,10 +84,10 @@ public class MainServer extends Thread {
         String code  = connection.getInputString();
 
         switch (code) {
-            case "connect-bt-device":
+            case "CONNECT-BT-DEVICE":
                 //TODO: figure out a way to connect bt device and wait for confirmation
                 break;
-            case "get-status":
+            case "GET-STATUS":
                 if (bluetoothServer.getBtDeviceConnected()) {
                     connection.sendOutput("connected");
                 }
@@ -95,6 +95,26 @@ public class MainServer extends Thread {
                     connection.sendOutput("disconnected");
                 }
                 break;
+        }
+    }
+
+    private void handleCode(String code) {
+
+        switch (code) {
+            case "EMERGENCY-ACTIVATED":
+                //EMERGENCY HAS BEEN ACTIVATED
+                break;
+        }
+    }
+
+    private void handleBtDevice() {
+
+        if (bluetoothServer.getBtDeviceConnected()) {
+
+            if (bluetoothServer.getIncomingMessage() != null) {
+                handleCode(bluetoothServer.getIncomingMessage());
+                bluetoothServer.setIncomingMessage(null);
+            }
         }
     }
 }

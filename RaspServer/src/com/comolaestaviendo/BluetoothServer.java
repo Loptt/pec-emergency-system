@@ -79,6 +79,10 @@ public class BluetoothServer {
         return incomingMessage;
     }
 
+    public void setIncomingMessage(String newString) {
+        incomingMessage = newString;
+    }
+
     public boolean getBtDeviceConnected() {
         return btDeviceConnected;
     }
