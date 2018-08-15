@@ -50,7 +50,7 @@ public class MainServer extends Thread {
                 Socket socket = serverSocket.accept();
                 connection = new IPConnection(socket);
                 ipConnections.add(connection);
-                ipConnections.get(ipConnections.size()-1).run();
+                ipConnections.get(ipConnections.size()-1).start();
             }
 
         } catch (IOException e) {
