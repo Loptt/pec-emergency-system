@@ -29,7 +29,7 @@ public class MainServer extends Thread {
         //Initialize servers if necessary
 
         //Start thread to wait for connections
-        run();
+        this.start();
 
         //Main loop to handle connections and attend events
         while (true) {
@@ -62,6 +62,7 @@ public class MainServer extends Thread {
 
         ArrayList<Integer> removeIndices = new ArrayList<>();
 
+        //Attend each connection
         for (int i = 0; i < ipConnections.size(); ++i) {
             if (!ipConnections.get(i).getIsConnectionActive()) {
                 removeIndices.add(i);
