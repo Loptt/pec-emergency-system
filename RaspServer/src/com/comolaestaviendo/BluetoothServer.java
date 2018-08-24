@@ -39,6 +39,7 @@ public class BluetoothServer {
         try {
             localDevice = LocalDevice.getLocalDevice();
             localDevice.setDiscoverable(DiscoveryAgent.GIAC);
+            System.out.println("Hosting Bluetooth in: " + localDevice.getFriendlyName());
         } catch (BluetoothStateException e) {
             e.printStackTrace();
         }
@@ -60,6 +61,8 @@ public class BluetoothServer {
         StreamConnection connection;
 
         try {
+            System.out.println("Waiting for connections...");
+
             connection = connectionNotifier.acceptAndOpen();
             remoteDevice = RemoteDevice.getRemoteDevice(connection);
 
