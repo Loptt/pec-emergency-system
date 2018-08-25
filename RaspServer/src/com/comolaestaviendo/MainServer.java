@@ -51,7 +51,7 @@ public class MainServer extends Thread {
                 connection = new IPConnection(socket);
 
                 System.out.println("Connected: " + socket.toString());
-                
+
                 ipConnections.add(connection);
                 ipConnections.get(ipConnections.size()-1).start();
             }
