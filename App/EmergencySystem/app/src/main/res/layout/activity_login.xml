@@ -18,7 +18,7 @@
         android:layout_marginTop="60dp"
         android:text="@string/Logo_Text"
         android:textColor="@color/colorTextIcons"
-        android:textSize="80dp"
+        android:textSize="80sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -112,7 +112,7 @@
         android:layout_marginRight="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_button"
+        android:background="@drawable/familybutton"
         android:text="@string/familyb_text"
         android:textColor="@color/colorTextIcons"
         app:layout_constraintEnd_toEndOf="parent"
