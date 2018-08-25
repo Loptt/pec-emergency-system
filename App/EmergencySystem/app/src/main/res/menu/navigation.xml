@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_devices"
+        android:icon="@drawable/ic_outline_devices_other_24px"
+        android:title="Devices"></item>
+
+    <item
+        android:id="@+id/navigation_members"
+        android:icon="@drawable/ic_outline_accessibility_new_24px"
+        android:title="Members"></item>
+
+    <item
+        android:id="@+id/navigation_emergency"
+        android:icon="@drawable/ic_baseline_priority_high_24px"
+        android:title="Emergency"></item>
+
+</menu>
