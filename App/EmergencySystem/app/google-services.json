@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "8928323508",
+    "firebase_url": "https://emergency-b80d3.firebaseio.com",
+    "project_id": "emergency-b80d3",
+    "storage_bucket": "emergency-b80d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8928323508:android:7d2ac261ed1ab2ca",
+        "android_client_info": {
+          "package_name": "com.pacosanchez.emergencysystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8928323508-76knkml1nve98075f6rsogfknfdd1859.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pacosanchez.emergencysystem",
+            "certificate_hash": "5ab14953e840484a61d103a58749acef83cd4329"
+          }
+        },
+        {
+          "client_id": "8928323508-12fupcfbntj3k81ih1jngkehsuc3qmbb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pacosanchez.emergencysystem",
+            "certificate_hash": "3b6a2f548357544430028a0cdee57fee2dc5feba"
+          }
+        },
+        {
+          "client_id": "8928323508-jpapagug44ja0oblojstbqd81o5lgo34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP7ba3rqr_8brj3F327odSAHMCgp3Gbvc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8928323508-jpapagug44ja0oblojstbqd81o5lgo34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -14,11 +14,9 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="40" />
-                            <entry key="outputName" value="ic_outline_lock_24px" />
+                            <entry key="outputName" value="ic_baseline_priority_high_24px" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\Paco Sanchez\Desktop\Icons\Emergency System\outline-lock-24px.svg" />
-                            <entry key="width" value="40" />
+                            <entry key="sourceFile" value="C:\Users\Paco Sanchez\Desktop\Icons\Emergency System\baseline-priority_high-24px.svg" />
                           </map>
                         </option>
                       </PersistentState>
