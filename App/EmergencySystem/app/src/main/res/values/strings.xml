@@ -7,4 +7,9 @@
     <string name="loginb_text">Log In</string>
     <string name="signupb_text">Create Account</string>
     <string name="familyb_text">Family Member?</string>
+    <string name="joinb_text">Join PCE!</string>
+    <string name="placeholder_text">Placeholder</string>
+    <string name="fname_hint">First Name</string>
+    <string name="lname_hint">Last Name</string>
+    <string name="cpassword_hint">Confirm Password...</string>
 </resources>
