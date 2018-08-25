@@ -6,7 +6,7 @@ import javax.microedition.io.StreamConnection;
 import javax.microedition.io.StreamConnectionNotifier;
 import java.io.*;
 
-public class BluetoothServer {
+public class BluetoothServer extends Thread {
 
     private LocalDevice localDevice;
 
@@ -76,6 +76,14 @@ public class BluetoothServer {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public void run() {
+
+        while (true) {
+            connect();
+        }
     }
 
     public String getIncomingMessage() {

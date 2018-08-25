@@ -22,10 +22,12 @@ public class MainServer extends Thread {
         bluetoothServer = new BluetoothServer();
         serverSocket    = new ServerSocket(PORT_NUMBER);
         ipConnections   = new ArrayList<>();
+
+        bluetoothServer.start();
     }
 
     //Starting point of server
-    public void initialize() throws IOException {
+    public void initialize() {
         //Initialize servers if necessary
 
         //Start thread to wait for connections
@@ -90,6 +92,7 @@ public class MainServer extends Thread {
         switch (code) {
             case "CONNECT-BT-DEVICE":
                 //TODO: figure out a way to connect bt device and wait for confirmation
+
                 break;
             case "GET-STATUS":
                 if (bluetoothServer.getBtDeviceConnected()) {
