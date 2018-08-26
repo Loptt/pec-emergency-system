@@ -1,4 +1,4 @@
 import main_server
 
 server = main_server.MainServer()
-server.start()
+server.run()

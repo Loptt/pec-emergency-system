@@ -7,6 +7,7 @@ class BluetoothServer:
     socket = BluetoothSocket(RFCOMM)
 
     connected = False
+    data = ""
 
     def __init__(self):
         pass

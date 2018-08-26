@@ -16,7 +16,7 @@ class MainServer:
     def __init__(self):
         print("Initializing main server...")
 
-        it_server_thread = threading.Thread(target=self.internet_server.run)
+        it_server_thread = threading.Thread(target=self.it_server.run)
         it_server_thread.daemon = True
         print("Switching internet server to thread...")
         it_server_thread.start()
