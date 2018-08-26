@@ -3,17 +3,13 @@ package com.pacosanchez.emergencysystem;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.Toast;
-
-import java.io.IOException;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class addDevice extends AppCompatActivity {
 
@@ -27,10 +23,14 @@ public class addDevice extends AppCompatActivity {
 
     Socket socket;
 
+    ArrayList<Device> deviceList = new ArrayList<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_device);
+
 
         sharedPreferences = this.getPreferences(Context.MODE_PRIVATE);
 
@@ -55,4 +55,5 @@ public class addDevice extends AppCompatActivity {
             }
         });
     }
+
 }
