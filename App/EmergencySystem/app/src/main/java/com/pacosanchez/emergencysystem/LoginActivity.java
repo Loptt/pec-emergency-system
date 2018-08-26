@@ -54,6 +54,13 @@ public class LoginActivity extends AppCompatActivity {
                 signIn(emailTextField.getText().toString(),passwordTextField.getText().toString());
             }
         });
+
+        bSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(signUpIntent);
+            }
+        });
     }
 
     @Override

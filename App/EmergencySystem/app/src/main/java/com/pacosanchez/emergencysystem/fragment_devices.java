@@ -14,6 +14,7 @@ public class fragment_devices extends Fragment implements View.OnClickListener {
 
     Intent addRaspIntent;
     ImageButton bAddDevice;
+    Button addPulseraB;
 
     public static fragment_devices newInstance(){
         fragment_devices fragment = new fragment_devices();
@@ -36,7 +37,9 @@ public class fragment_devices extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_devices, container, false);
         bAddDevice = v.findViewById(R.id.bAddDevice);
+        addPulseraB = v.findViewById(R.id.addPulsera);
         bAddDevice.setOnClickListener(this);
+        addPulseraB.setOnClickListener(this);
 
         return v;
 
@@ -44,7 +47,15 @@ public class fragment_devices extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v){
-        startActivity(addRaspIntent);
+        switch (v.getId()){
+
+            case R.id.bAddDevice:
+                startActivity(addRaspIntent);
+                break;
+            case R.id.addPulsera:
+                    
+                break;
+        }
     }
 
 
