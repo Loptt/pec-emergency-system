@@ -20,9 +20,17 @@
     <string name="device_status">Status: </string>
     <string name="device_type">Device Type: </string>
     <string name="device_name">Device Name: </string>
-    <string name="title_activity_popo">popo</string>
-    <string name="title_activity_add_device">addDevice</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
 
+    <string name="Rasp_desc">The Raspberry Pi is the brain of the system, it will send the signal in case something is wrong!</string>
+    <string name="Rasp_cont">Raspberry desc</string>
+    <string name="raspnameDesc">Give your mastermind a name!</string>
+    <string name="raspipDesc">Please type your devices ip address</string>
+    <string name="addRasp">Sync Raspberry!</string>
+
+    <string name="raspName_hint">Name</string>
+    <string name="raspip_hint">Ip Address</string>
+
+    <string name="action_settings">Action Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
