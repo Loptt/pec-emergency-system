@@ -8,7 +8,9 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -25,28 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigationView);
 
-        SharedPreferences preferences = this.getPreferences(Context.MODE_PRIVATE);
-        final String ipAddress = preferences.getString("address","0.0.0.0");
-
-        if (!ipAddress.equals("0.0.0.0")) {
-
-            Thread thread = new Thread(new Runnable(){
-                public void run() {
-                    try {
-                        socket = new Socket(ipAddress, 7500);
-                        connection = new IPConnection(socket);
-                        connection.start();
-
-                        //Toast.makeText(addDevice.this, "Dispositivo conectado", Toast.LENGTH_SHORT).show();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-            thread.start();
-
-        }
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -73,5 +53,37 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container,fragment_devices.newInstance());
         transaction.commit();
+
+        if (StatConnection.connection != null) {
+
+            Thread thread = new Thread(new Runnable(){
+                public void run() {
+
+                    Log.e("Starting thread", "Threeeead");
+                    while (true) {
+
+                        if (StatConnection.connection.isEmergency()) {
+                            //Emergency
+                        }
+                    }
+                }
+            });
+
+            thread.start();
+        }
+
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        if (connection != null)
+            connection.closeConnection();
+    }
+
+    public IPConnection getConnection() {
+        return connection;
     }
 }

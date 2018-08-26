@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,9 +50,27 @@ public class addDevice extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("address", ipAddress);
                 editor.putString("deviceName", deviceName);
+                editor.apply();
 
                 Intent intent = new Intent(addDevice.this, MainActivity.class);
+                intent.putExtra("connect", true);
                 startActivity(intent);
+
+                Thread thread = new Thread(new Runnable(){
+                    public void run() {
+                        try {
+                            socket = new Socket(ipAddress, 7500);
+                            StatConnection.connection = new IPConnection(socket);
+                            StatConnection.connection.start();
+
+                            //Toast.makeText(MainActivity.this, "Dispositivo conectado", Toast.LENGTH_SHORT).show();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
+                thread.start();
             }
         });
     }

@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.support.v4.app.Fragment;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import java.util.Objects;
 
 
 public class fragment_devices extends Fragment implements View.OnClickListener {
@@ -15,6 +18,8 @@ public class fragment_devices extends Fragment implements View.OnClickListener {
     Intent addRaspIntent;
     ImageButton bAddDevice;
     Button addPulseraB;
+
+    IPConnection connection;
 
     public static fragment_devices newInstance(){
         fragment_devices fragment = new fragment_devices();
@@ -28,7 +33,7 @@ public class fragment_devices extends Fragment implements View.OnClickListener {
 
         addRaspIntent = new Intent(getActivity(),addDevice.class);
 
-
+        connection = ((MainActivity) (this.getActivity())).getConnection();
 
     }
 
@@ -53,7 +58,25 @@ public class fragment_devices extends Fragment implements View.OnClickListener {
                 startActivity(addRaspIntent);
                 break;
             case R.id.addPulsera:
-                    
+
+                if (StatConnection.connection != null) {
+
+                    Thread thread = new Thread(new Runnable(){
+                        public void run() {
+                            try {
+                                StatConnection.connection.sendOutput("BLT-12345-CONNECT");
+                                Toast.makeText(getContext(),"Conectando pulsera...", Toast.LENGTH_SHORT).show();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+
+                    thread.start();
+                }
+                else {
+                    Toast.makeText(getContext(),"Primero conecta el servidor Raspberry", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }

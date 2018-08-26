@@ -12,6 +12,7 @@ public class IPConnection extends Thread {
     private Socket socket;
     private PrintWriter output;
     private BufferedReader input;
+    private boolean emergency = false;
 
     private String inputString, outputString;
 
@@ -21,14 +22,16 @@ public class IPConnection extends Thread {
         this.socket = socket;
         output = new PrintWriter(socket.getOutputStream(), true);
         input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        inputString = "empty";
     }
 
     @Override
     public void run() {
 
         try {
-            while ((inputString = input.readLine()) != null) {
-
+            while (true) {
+                inputString = input.readLine();
+                emergency = true;
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -53,7 +56,7 @@ public class IPConnection extends Thread {
         return isConnectionActive;
     }
 
-    private void closeConnection() {
+    public void closeConnection() {
         output.close();
 
         try {
@@ -67,4 +70,7 @@ public class IPConnection extends Thread {
 
     }
 
+    public boolean isEmergency() {
+        return emergency;
+    }
 }
