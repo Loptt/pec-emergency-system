@@ -38,7 +38,7 @@ public class IPConnection extends Thread {
     }
 
     public void sendOutput(String code) {
-        output.write(code);
+        output.println(code);
     }
 
     public String getInputString() {
