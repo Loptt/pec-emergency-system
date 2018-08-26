@@ -1,3 +1,4 @@
-import inter
+import main_server
 
-server = main_server.M
+server = main_server.MainServer()
+server.start()
