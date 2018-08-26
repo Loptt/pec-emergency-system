@@ -12,5 +12,3 @@ class PecItProtocol:
 
         if self.message == "STATUS-GET":
             return bt_server.connected
-
-        elif

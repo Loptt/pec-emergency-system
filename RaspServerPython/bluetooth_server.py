@@ -1,5 +1,4 @@
 from bluetooth import *
-import subprocess
 
 
 class BluetoothServer:
@@ -14,19 +13,20 @@ class BluetoothServer:
 
     def connect_bt(self):
         try:
-            self.socket.connect(address)
+            self.socket.connect(self.address)
             self.connected = True
             print("BT device connected")
         except:
             print("Failed connection")
+            self.connected = False
 
     def run(self):
 
         while True:
             try:
-                self.data = self.bt.read()
+                self.data = self.socket.read()
 
-                if not self.data
+                if not self.data:
                     connected = False
 
             except:

@@ -1,4 +1,3 @@
-import serial
-import sys
+import inter
 
-bt = serial.Serial('/dev/rfcomm0', 9600)
+server = main_server.M

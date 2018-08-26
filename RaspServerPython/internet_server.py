@@ -36,7 +36,7 @@ class InternetServer:
                 break
 
             self.command = data.decode()
-            print("From server class: ", self.command)
+            print("From internet server class: ", self.command)
 
     def send_message(self, message):
 
@@ -48,8 +48,8 @@ class InternetServer:
             pass
 
     def run(self):
-        print("Initializing server on thread...")
-        print("Waiting for connections...\n")
+        print("Initializing internet server on thread...")
+        print("Waiting for connections on internet server...\n")
 
         while True:
 
