@@ -6,6 +6,7 @@ public class Device_DB {
     String sPartial_Key;
     String sID;
 
+
     public Device_DB() {
         this.sPartial_Key = "0";
     }
